@@ -3,10 +3,10 @@ var locations;
 function startUp() {
     googleMap();
     $('.search').on('click', searchFilms);
-    console.log("I'm working!")
 }
 
 searchFilms = function () {
+    $('#services').removeClass('hidden');
     $('.film').empty();
     $('html, body').animate({
         scrollTop: $('.filmInfo').offset().top
@@ -96,29 +96,33 @@ onError = function () {
 googleMap = function () {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 10,
+        zoom: 11,
         center: new google.maps.LatLng(35.7013352, 139.4742351)
     });
     locations = [{
         lat: 35.7013352,
         lng: 139.4742351,
-        title: "Studio Ghibli, Inc."
+        title: "Studio Ghibli, Inc.",
+        flag : {
+            scaledSize: new google.maps.Size(60, 60),
+            url: '/Scripts/img/totoroTop2.png'
+        }
     }, {
         lat: 35.696238,
         lng: 139.568243,
-        title: "Ghibli Museum"
+        title: "Ghibli Museum",
+        flag: {
+            scaledSize: new google.maps.Size(70, 70),
+            url: '/Scripts/img/Flying_totoro.png'
+        }
     }];
     for (var i = 0; i < locations.length; i++) {
         var loc = locations[i];
-        var flag = {
-            scaledSize: new google.maps.Size(45, 45),
-            url: '/Scripts/img/Duende_del_polvo.png'
-        };
 
         var marker = new google.maps.Marker({
             position: loc,
             map: map,
-            icon: flag,
+            icon: loc.flag,
             title: loc.title,
             animation: google.maps.Animation.DROP
         });
