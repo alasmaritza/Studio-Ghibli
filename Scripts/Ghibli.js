@@ -1,11 +1,13 @@
 var locations;
+var id;
 
 function startUp() {
     googleMap();
+    randomImage();
     $('.search').on('click', searchFilms);
 }
 
-searchFilms = function () {
+var searchFilms = function () {
     $('#services').removeClass('hidden');
     $('.film').empty();
     $('html, body').animate({
@@ -13,10 +15,10 @@ searchFilms = function () {
     }, 2000);
     var name = $('#filmName').val().toLowerCase();
     if (name == 'my neighbor totoro' || name == 'totoro') {
-        var id = 3;
+        id = 3;
         filmsGet(id, onSuccess, onError);
     } else if (name == 'castle in the sky') {
-        var id = 1;
+        id = 1;
         filmsGet(id, onSuccess, onError);
     } else if (name == 'grave of the fireflies') {
         var id = 2;
@@ -78,22 +80,44 @@ searchFilms = function () {
     return false
 }
 
-onSuccess = function (data) {
+var onSuccess = function (data) {
 
     $('.filmTitle').append(data.title);
     $('.filmYear').append(data.release_date);
     $('.filmDirector').append(data.director);
     $('.filmDescription').append(data.description);
     $('.filmProducer').append(data.producer);
+    filmPostersGet(data.id, onPosterSuccess, onPosterError);
     console.log(data);
 }
 
-onError = function () {
+var onError = function () {
     $('.filmTitle').append("Nothing Found!");
     console.log("I'm broken.");
 }
 
-googleMap = function () {
+var onPosterSuccess = function (item) {
+    $('.filmPoster').attr('src', item.Poster);
+    $('.filmPosterOrg').attr('src', item.PosterOrig);
+    console.log(item);
+}
+
+var onPosterError = function () {
+    console.log("No Poster Found.");
+}
+var randomImage = function() {
+    var image = Math.floor(Math.random() * 5) + 1;
+    backgroundImageGet(image, onImageSuccess, onImageError)
+}
+
+var onImageSuccess = function(data) {
+    $('.backgroundImage').attr('src', data.image);
+}
+
+var onImageError = function () {
+    console.log("Error.")
+}
+var googleMap = function () {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 11,
