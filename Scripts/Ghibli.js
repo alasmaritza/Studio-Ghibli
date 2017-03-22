@@ -1,5 +1,4 @@
 var locations;
-var id;
 
 function startUp() {
     googleMap();
@@ -14,14 +13,14 @@ var searchFilms = function () {
         scrollTop: $('.filmInfo').offset().top
     }, 2000);
     var name = $('#filmName').val().toLowerCase();
-    if (name == 'my neighbor totoro' || name == 'totoro') {
-        id = 3;
-        filmsGet(id, onSuccess, onError);
-    } else if (name == 'castle in the sky') {
+    if (name == 'castle in the sky') {
         id = 1;
         filmsGet(id, onSuccess, onError);
-    } else if (name == 'grave of the fireflies') {
+    } else if (name == 'grave of the fireflies' || name == 'fireflies') {
         var id = 2;
+        filmsGet(id, onSuccess, onError);
+    } else if (name == 'my neighbor totoro' || name == 'totoro') {
+        var id = 3;
         filmsGet(id, onSuccess, onError);
     } else if (name == 'kiki\'s delivery service' || name == 'kikis delivery service') {
         var id = 4;
@@ -105,12 +104,12 @@ var onPosterSuccess = function (item) {
 var onPosterError = function () {
     console.log("No Poster Found.");
 }
-var randomImage = function() {
+var randomImage = function () {
     var image = Math.floor(Math.random() * 6) + 1;
     backgroundImageGet(image, onImageSuccess, onImageError)
 }
 
-var onImageSuccess = function(data) {
+var onImageSuccess = function (data) {
     $('.backgroundImage').attr('src', data.image);
 }
 
@@ -127,7 +126,7 @@ var googleMap = function () {
         lat: 35.7013352,
         lng: 139.4742351,
         title: "Studio Ghibli, Inc.",
-        flag : {
+        flag: {
             scaledSize: new google.maps.Size(60, 60),
             url: '/Content/img/totoroTop2.png'
         }
