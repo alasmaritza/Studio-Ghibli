@@ -155,7 +155,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url("");
+  /*background-image: url("");*/
   text-align: center;
   color: white;
 }
@@ -412,6 +412,6 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #222222;
+  -webkit-tap-highlight-color: #222222;
 }
 

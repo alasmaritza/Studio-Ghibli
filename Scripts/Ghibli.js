@@ -106,7 +106,7 @@ var onPosterError = function () {
     console.log("No Poster Found.");
 }
 var randomImage = function() {
-    var image = Math.floor(Math.random() * 5) + 1;
+    var image = Math.floor(Math.random() * 6) + 1;
     backgroundImageGet(image, onImageSuccess, onImageError)
 }
 
@@ -129,7 +129,7 @@ var googleMap = function () {
         title: "Studio Ghibli, Inc.",
         flag : {
             scaledSize: new google.maps.Size(60, 60),
-            url: '/Scripts/img/totoroTop2.png'
+            url: '/Content/img/totoroTop2.png'
         }
     }, {
         lat: 35.696238,
@@ -137,7 +137,7 @@ var googleMap = function () {
         title: "Ghibli Museum",
         flag: {
             scaledSize: new google.maps.Size(70, 70),
-            url: '/Scripts/img/Flying_totoro.png'
+            url: '/Content/img/Flying_totoro.png'
         }
     }];
     for (var i = 0; i < locations.length; i++) {
