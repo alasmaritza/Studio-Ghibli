@@ -72,7 +72,7 @@ var googleMap = function () {
         title: "Studio Ghibli, Inc.",
         flag: {
             scaledSize: new google.maps.Size(60, 60),
-            url: '/Content/img/totoroTop2.png'
+            url: '/Studio-Ghibli/Content/img/totoroTop2.png'
         }
     }, {
         lat: 35.696238,
@@ -80,7 +80,7 @@ var googleMap = function () {
         title: "Ghibli Museum",
         flag: {
             scaledSize: new google.maps.Size(70, 70),
-            url: '/Content/img/Flying_totoro.png'
+            url: '/Studio-Ghibli/Content/img/Flying_totoro.png'
         }
     }];
     for (var i = 0; i < locations.length; i++) {
