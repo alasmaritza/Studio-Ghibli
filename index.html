@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find information on any Studio Ghibli Film">
+    <meta name="author" content="Maritza Alas">
+    <title>Studio Ghibli Films</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="Scripts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="Scripts/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="Scripts/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="Scripts/css/creative.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="Content/img/totoro.png" sizes="32x32">
+    <style>
+        .search {
+            margin: 20px;
+        }
+
+        .form-control {
+            margin: 10px;
+        }
+
+        #map-canvas {
+            /* width: 80%; */
+            height: 400px;
+        }
+
+        #homeHeading {
+            color: #ed431f;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Studio Ghibli</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">Find A Film</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services"><span class="filmTitle film">Film</span></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Images</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Locations</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <header>
+        <img class="backgroundImage background-image" src="" width="100%" height="100%">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Here You'll Find Information on Any Studio Ghibli Film</h1>
+                <hr>
+                <p></p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Begin Searching</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Find A Film</h2>
+                    <hr class="light">
+                    <form id="form">
+                        <div class="form-group">
+                            <input class="col-md-6 form-control" type="text" id="filmName" placeholder="Enter the Name of A Film - Ex.'Ponyo'" />
+                        </div>
+                        <button type="submit" class="btn btn-success search">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="filmInfo hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><span class="filmTitle film"></span></h2>
+                    <h5>Released: <span class="filmYear film"></span></h5>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 text-center">
+                    <div class="service-box">
+                        <img src="Content/img/directorChair.png" width="60px" height="60px">
+                        <h3>Director</h3>
+                        <p class="text-muted"><span class="filmDirector film"></span></p>
+                        <hr>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="service-box">
+                        <img src="Content/img/description.png" width="60px" height="60px">
+                        <h3>Description</h3>
+                        <p class="text-muted"><span class="filmDescription film"></span></p>
+                        <hr>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <div class="service-box">
+                        <img src="Content/img/megaphone.png" width="60px" height="60px">
+                        <h3>Producer</h3>
+                        <p class="text-muted"><span class="filmProducer film"></span></p>
+                        <hr>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+                 <img class="filmPoster col-lg-3 img-responsive" src="">
+                <img class="filmPosterOrg col-lg-3 img-responsive" src=""> 
+            </div>
+        </div>
+    </section>
+
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="Content/img/hayao-miyazaki.jpg" class="portfolio-box">
+                        <img src="Content/img/hayao.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Founder
+                                </div>
+                                <div class="project-name">
+                                    Hayao Miyazaki
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="Content/img/neighbortotoro.jpg" class="portfolio-box">
+                        <img src="Content/img/neighbor.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    1988
+                                </div>
+                                <div class="project-name">
+                                    My Neighbor Totoro
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="Content/img/ToshioSuzuki.jpg" class="portfolio-box">
+                        <img src="Content/img/ToshioSuzuki.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Founder
+                                </div>
+                                <div class="project-name">
+                                    Toshio Suzuki
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="Content/img/kiki.jpg" class="portfolio-box">
+                        <img src="Content/img/kiki2.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    1989
+                                </div>
+                                <div class="project-name">
+                                    Kiki's Delivery Service
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="Content/img/takahata.jpg" class="portfolio-box">
+                        <img src="Content/img/takahata.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Founder
+                                </div>
+                                <div class="project-name">
+                                    Isao Takahata
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="Content/img/spiritedaway.jpg" class="portfolio-box">
+                        <img src="Content/img/spirited.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    2001
+                                </div>
+                                <div class="project-name">
+                                    Spirited Away
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+    </aside>
+
+    <section id="contact">
+        <!--map starts here-->
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <h2 class="section-heading">Studio Ghibli Locations</h2>
+            <hr class="primary">
+            <p>Ghibli Inc. Headquarters</p>
+            <p>Ghibli Museum</p>
+        </div>
+        <br>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="map-canvas"></div>
+            <div class="col-md-2"></div>
+        </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <br>
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p></p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <p>0118 999 881 999 119 725 3</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p><a href="mailto:alas.maritza.j@gmail.com">alas.maritza.j@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GoogleMaps Api-->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNda41mrqmOuxsyNDtc7I_B0jFaL-nZwA"></script>
+    <!-- jQuery -->
+    <script src="Scripts/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Scripts/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="Scripts/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="Scripts/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="Scripts/js/creative.min.js"></script>
+    <script src="Scripts/ghibli.js"></script>
+    <script src="Scripts/ghibliCalls.js"></script>
+
+</body>
+
+</html>
