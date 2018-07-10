@@ -25,7 +25,7 @@ var filmsGetAll = function (onSuccess, onError) {
 }
 
 var filmPostersGet = function (id, onSuccess, onError) {
-    var url = "http://597b9ec6c577810011876644.mockapi.io/Ghibli/posters/" + id
+    var url = "https://597b9ec6c577810011876644.mockapi.io/Ghibli/posters/" + id
     var settings = {
         cache: false,
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
@@ -38,7 +38,7 @@ var filmPostersGet = function (id, onSuccess, onError) {
 }
 
 var backgroundImageGet = function (id, onSuccess, onError) {
-    var url = "http://58d1a87804de34120083b4df.mockapi.io/images/images/" + id
+    var url = "https://58d1a87804de34120083b4df.mockapi.io/images/images/" + id
     var settings = {
         cache: false,
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
